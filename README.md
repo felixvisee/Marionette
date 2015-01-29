@@ -16,15 +16,15 @@ animateLayer(layer, withDuration: 5, timingFunction: .EaseInEaseOut) { layer in
 It's equivalent to:
 
 ```swift
-CABasicAnimation *positionAnimation = CABasicAnimation(keyPath: "position")
+let positionAnimation = CABasicAnimation(keyPath: "position")
 positionAnimation.fromValue = NSValue(CGPoint: CGPointMake(50, 50))
 positionAnimation.toValue = NSValue(CGPoint: CGPointMake(150, 150))
 
-CABasicAnimation *backgroundColorAnimation = CABasicAnimation(keyPath: "backgroundColor")
+let backgroundColorAnimation = CABasicAnimation(keyPath: "backgroundColor")
 backgroundColorAnimation.fromValue = UIColor.redColor().CGColor
 backgroundColorAnimation.toValue = UIColor.blueColor().CGColor
 
-CAAnimationGroup *animationGroup = CAAnimationGroup()
+let animationGroup = CAAnimationGroup()
 animationGroup.animations = [positionAnimation, backgroundColorAnimation]
 animationGroup.duration = 5
 animationGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
