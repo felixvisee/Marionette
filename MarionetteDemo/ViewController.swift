@@ -27,6 +27,11 @@ class ViewController: UIViewController {
         animateLayer(box.layer, withDuration: 5, timingFunction: .EaseInEaseOut) { layer in
             layer.position ~= CGPointMake(50, 50) ... CGPointMake(150, 150)
             layer.backgroundColor ~= UIColor.redColor().CGColor ... UIColor.blueColor().CGColor
+            layer.opacity ~= [0.0: 0.0, 0.5: 0.5, 1.0: 0]
         }
+
+        box.layer.position = CGPointMake(150, 150)
+        box.layer.backgroundColor = UIColor.blueColor().CGColor
+        box.layer.opacity = 0
     }
 }
