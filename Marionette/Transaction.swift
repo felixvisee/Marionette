@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Felix Jendrusch. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public func transaction(block: () -> ()) {
     transactionWithDuration(nil, timingFunction: nil, block: block)

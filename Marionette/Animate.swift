@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Felix Jendrusch. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public func animateLayer(layer: CALayer, block: (LayerProxy) -> ()) {
     animateLayer(layer, withDuration: nil, timingFunction: nil, forKey: nil, block: block)

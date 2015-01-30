@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Felix Jendrusch. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public class Property<T> {
     internal let context: Context
