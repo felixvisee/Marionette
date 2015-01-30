@@ -12,15 +12,15 @@ public func animateLayer(layer: CALayer, block: (LayerProxy) -> ()) {
     animateLayer(layer, withDuration: nil, timingFunction: nil, forKey: nil, block: block)
 }
 
-public func animateLayer(layer: CALayer, withDuration aDuration: CFTimeInterval?, block: (LayerProxy) -> ()) {
+public func animateLayer(layer: CALayer, withDuration aDuration: CFTimeInterval, block: (LayerProxy) -> ()) {
     animateLayer(layer, withDuration: aDuration, timingFunction: nil, forKey: nil, block: block)
 }
 
-public func animateLayer(layer: CALayer, withDuration aDuration: CFTimeInterval?, timingFunction aTimingFunction: MediaTimingFunction?, block: (LayerProxy) -> ()) {
+public func animateLayer(layer: CALayer, withDuration aDuration: CFTimeInterval, timingFunction aTimingFunction: MediaTimingFunction, block: (LayerProxy) -> ()) {
     animateLayer(layer, withDuration: aDuration, timingFunction: aTimingFunction, forKey: nil, block: block)
 }
 
-public func animateLayer(layer: CALayer, withDuration aDuration: CFTimeInterval? = nil, timingFunction aTimingFunction: MediaTimingFunction? = nil, forKey key: String! = nil, #block: (LayerProxy) -> ()) {
+public func animateLayer(layer: CALayer, withDuration aDuration: CFTimeInterval? = nil, timingFunction aTimingFunction: MediaTimingFunction? = nil, forKey key: String? = nil, #block: (LayerProxy) -> ()) {
     let context = Context()
 
     block(LayerProxy(context, layer))

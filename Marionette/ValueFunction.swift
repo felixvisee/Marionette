@@ -21,7 +21,7 @@ public enum ValueFunction {
     case TranslateY
     case TranslateZ
 
-    public var name: String! {
+    public var name: String {
         switch self {
         case .RotateX:
             return kCAValueFunctionRotateX
@@ -48,7 +48,7 @@ public enum ValueFunction {
         }
     }
 
-    public func function() -> CAValueFunction! {
+    public func function() -> CAValueFunction {
         return CAValueFunction(name: name)
     }
 }

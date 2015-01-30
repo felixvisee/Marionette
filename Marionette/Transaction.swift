@@ -12,7 +12,7 @@ public func transaction(block: () -> ()) {
     transactionWithDuration(nil, timingFunction: nil, block: block)
 }
 
-public func transactionWithDuration(aDuration: CFTimeInterval?, block: () -> ()) {
+public func transactionWithDuration(aDuration: CFTimeInterval, block: () -> ()) {
     transactionWithDuration(aDuration, timingFunction: nil, block: block)
 }
 

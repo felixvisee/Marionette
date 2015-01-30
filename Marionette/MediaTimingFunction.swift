@@ -33,7 +33,7 @@ public enum MediaTimingFunction {
         }
     }
 
-    public func function() -> CAMediaTimingFunction! {
+    public func function() -> CAMediaTimingFunction {
         switch self {
         case .CubicBezier(let c1x, let c1y, let c2x, let c2y):
             return CAMediaTimingFunction(controlPoints: c1x, c1y, c2x, c2y)

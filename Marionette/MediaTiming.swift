@@ -14,7 +14,7 @@ public enum FillMode {
     case Backwards
     case Both
 
-    public var name: String! {
+    public var name: String {
         switch self {
         case .Removed:
             return kCAFillModeRemoved
@@ -36,5 +36,5 @@ public protocol MediaTiming {
     var repeatCount: Float { get set }
     var repeatDuration: CFTimeInterval { get set }
     var autoreverses: Bool { get set }
-    var fillMode: FillMode! { get set }
+    var fillMode: FillMode { get set }
 }

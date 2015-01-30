@@ -12,23 +12,37 @@ public class Property<T> {
     internal let context: Context
 
     internal let layer: CALayer
-    internal let keyPath: String!
-    internal let pack: (T) -> AnyObject!
+    internal let keyPath: String
+
+    internal let pack: (T) -> AnyObject
+    internal let unpack: (AnyObject) -> T
 
     public var value: T! {
-        return layer.valueForKeyPath(keyPath) as? T
+        get {
+            if let value: AnyObject = layer.valueForKeyPath(keyPath) {
+                return unpack(value)
+            } else {
+                return nil
+            }
+        }
+        set {
+            let value: AnyObject = pack(newValue)
+            layer.setValue(value, forKeyPath: keyPath)
+        }
     }
 
-    internal init(_ context: Context, _ layer: CALayer, _ keyPath: String!, _ pack: (T) -> AnyObject!) {
+    internal init(_ context: Context, _ layer: CALayer, _ keyPath: String, _ pack: (T) -> AnyObject, _ unpack: (AnyObject) -> T = { $0 as T }) {
         self.context = context
 
         self.layer = layer
         self.keyPath = keyPath
+
         self.pack = pack
+        self.unpack = unpack
     }
 }
 
-// TODO: Choose operator
+// TODO: Using the pattern matching operator may lead to confusion.
 public func ~= <T>(lhs: Property<T>, rhs: PropertyAnimation<T>) {
     let animation = rhs.animationForProperty(lhs)
     lhs.context.animations.append(animation)

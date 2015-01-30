@@ -21,7 +21,7 @@ public class Animation: MediaTiming {
     public var repeatCount: Float = 0
     public var repeatDuration: CFTimeInterval = 0
     public var autoreverses: Bool = false
-    public var fillMode: FillMode! = .Removed
+    public var fillMode: FillMode = .Removed
 
     private init() {}
 
@@ -38,10 +38,7 @@ public class Animation: MediaTiming {
         animation.repeatCount = repeatCount
         animation.repeatDuration = repeatDuration
         animation.autoreverses = autoreverses
-
-        if let fillMode = self.fillMode {
-            animation.fillMode = fillMode.name
-        }
+        animation.fillMode = fillMode.name
     }
 }
 
@@ -116,7 +113,7 @@ public enum CalculationMode {
     case Cubic
     case CubicPaced
 
-    public var name: String! {
+    public var name: String {
         switch self {
         case .Linear:
             return kCAAnimationLinear
@@ -136,7 +133,7 @@ public enum RotationMode {
     case Auto
     case AutoReverse
 
-    public var name: String! {
+    public var name: String {
         switch self {
         case .Auto:
             return kCAAnimationRotateAuto
@@ -151,7 +148,7 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
     public var path: CGPath! = nil
     public var keyTimes: [Float]! = nil
     public var timingFunctions: [MediaTimingFunction]! = nil
-    public var calculationMode: CalculationMode! = .Linear
+    public var calculationMode: CalculationMode = .Linear
     public var tensionValues: [Float]! = nil
     public var continuityValues: [Float]! = nil
     public var biasValues: [Float]! = nil
@@ -159,15 +156,13 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
 
     override public init() {}
 
-    public init(keyFrames: [(Float, T)]! = nil, withDuration aDuration: CFTimeInterval? = nil) {
+    public init(keyFrames: [(Float, T)], withDuration aDuration: CFTimeInterval? = nil) {
         super.init()
 
-        if keyFrames != nil {
-            values = []; keyTimes = []
-            for (keyTime, value) in keyFrames {
-                values.append(value)
-                keyTimes.append(keyTime)
-            }
+        values = []; keyTimes = []
+        for (keyTime, value) in keyFrames {
+            values.append(value)
+            keyTimes.append(keyTime)
         }
 
         if let duration = aDuration {
@@ -175,7 +170,7 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
         }
     }
 
-    public init(path: CGPath! = nil, withDuration aDuration: CFTimeInterval? = nil) {
+    public init(path: CGPath, withDuration aDuration: CFTimeInterval? = nil) {
         super.init()
 
         self.path = path
@@ -194,7 +189,7 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
     internal func populateAnimation(animation: CAKeyframeAnimation, forProperty property: Property<T>) {
         super.populateAnimation(animation, forProperty: property)
 
-        animation.values = values?.map({ property.pack($0)! })
+        animation.values = values?.map({ property.pack($0) })
         animation.path = path
         animation.keyTimes = keyTimes
         animation.timingFunctions = timingFunctions?.map({ $0.function() })
@@ -206,21 +201,21 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
     }
 }
 
-public func ... <T>(lhs: T!, rhs: T!) -> BasicAnimation<T> {
+public func ... <T>(lhs: T, rhs: T) -> BasicAnimation<T> {
     return BasicAnimation(fromValue: lhs, toValue: rhs)
 }
 
 // TODO: Precedence, Associativity
 prefix operator ... { }
 
-prefix public func ... <T>(rhs: T!) -> BasicAnimation<T> {
+prefix public func ... <T>(rhs: T) -> BasicAnimation<T> {
     return BasicAnimation(toValue: rhs)
 }
 
 // TODO: Precedence, Associativity
 postfix operator ... { }
 
-postfix public func ... <T>(lhs: T!) -> BasicAnimation<T> {
+postfix public func ... <T>(lhs: T) -> BasicAnimation<T> {
     return BasicAnimation(fromValue: lhs)
 }
 
