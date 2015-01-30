@@ -38,7 +38,7 @@ public func ~= <T>(lhs: Property<T>, rhs: T) {
     lhs ~= BasicAnimation(toValue: rhs)
 }
 
-public func ~= <T>(lhs: Property<T>, rhs: [Float: T]) {
+public func ~= <T>(lhs: Property<T>, rhs: [(Float, T)]) {
     lhs ~= KeyframeAnimation(keyFrames: rhs)
 }
 

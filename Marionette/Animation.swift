@@ -159,12 +159,12 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
 
     override public init() {}
 
-    public init(keyFrames: [Float: T]! = nil, withDuration aDuration: CFTimeInterval? = nil) {
+    public init(keyFrames: [(Float, T)]! = nil, withDuration aDuration: CFTimeInterval? = nil) {
         super.init()
 
         if keyFrames != nil {
             values = []; keyTimes = []
-            for (keyTime, value) in sorted(keyFrames, { $0.0 < $1.0 }) {
+            for (keyTime, value) in keyFrames {
                 values.append(value)
                 keyTimes.append(keyTime)
             }
@@ -239,13 +239,13 @@ public func ~ <I: IntervalType, T where I.Bound == T>(lhs: I, rhs: MediaTimingFu
     return animation
 }
 
-public func ~ <T>(lhs: [Float: T], rhs: MediaTimingFunction) -> KeyframeAnimation<T> {
+public func ~ <T>(lhs: [(Float, T)], rhs: MediaTimingFunction) -> KeyframeAnimation<T> {
     var animation = KeyframeAnimation(keyFrames: lhs)
     animation.timingFunction = rhs
     return animation
 }
 
-public func ~ <T>(lhs: [Float: T], rhs: [MediaTimingFunction]) -> KeyframeAnimation<T> {
+public func ~ <T>(lhs: [(Float, T)], rhs: [MediaTimingFunction]) -> KeyframeAnimation<T> {
     return KeyframeAnimation(keyFrames: lhs) ~ rhs
 }
 
