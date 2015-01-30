@@ -81,6 +81,12 @@ animation.fillMode = .Both
 layer.position ~= animation // won't compile
 ```
 
+Keyframe animations are supported too:
+
+```swift
+layer.opacity ~= [(0, 0), (0.5, 1), (1, 0)] ~ .EaseInEaseOut
+```
+
 The `transaction` and `transactionWithDuration` functions can be used to ease working with `CATransaction`:
 
 ```swift
