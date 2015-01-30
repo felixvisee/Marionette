@@ -56,7 +56,7 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
     public var biasValues: [Float]? = nil
     public var rotationMode: RotationMode? = nil
 
-    override public init() {}
+    public override init() {}
 
     public init(keyFrames: [(Float, T)], withDuration aDuration: CFTimeInterval? = nil) {
         super.init()
@@ -81,7 +81,7 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
         }
     }
 
-    override internal func animationForProperty(property: Property<T>) -> CAKeyframeAnimation! {
+    internal override func animationForProperty(property: Property<T>) -> CAKeyframeAnimation! {
         var animation = CAKeyframeAnimation()
         populateAnimation(animation, forProperty: property)
         return animation
@@ -90,10 +90,10 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
     internal func populateAnimation(animation: CAKeyframeAnimation, forProperty property: Property<T>) {
         super.populateAnimation(animation, forProperty: property)
 
-        animation.values = values?.map({ property.pack($0) })
+        animation.values = values?.map(property.pack)
         animation.path = path
         animation.keyTimes = keyTimes
-        animation.timingFunctions = timingFunctions?.map({ $0.function() })
+        animation.timingFunctions = timingFunctions?.map { $0.function() }
         animation.calculationMode = calculationMode.name
         animation.tensionValues = tensionValues
         animation.continuityValues = continuityValues
@@ -105,16 +105,14 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
 infix operator ~ { precedence 131 }
 
 public func ~ <T>(lhs: [(Float, T)], rhs: MediaTimingFunction) -> KeyframeAnimation<T> {
-    var animation = KeyframeAnimation(keyFrames: lhs)
-    animation.timingFunction = rhs
-    return animation
-}
-
-public func ~ <T>(lhs: [(Float, T)], rhs: [MediaTimingFunction]) -> KeyframeAnimation<T> {
     return KeyframeAnimation(keyFrames: lhs) ~ rhs
 }
 
 public func ~ <T>(lhs: KeyframeAnimation<T>, rhs: [MediaTimingFunction]) -> KeyframeAnimation<T> {
     lhs.timingFunctions = rhs
     return lhs
+}
+
+public func ~ <T>(lhs: [(Float, T)], rhs: [MediaTimingFunction]) -> KeyframeAnimation<T> {
+    return KeyframeAnimation(keyFrames: lhs) ~ rhs
 }

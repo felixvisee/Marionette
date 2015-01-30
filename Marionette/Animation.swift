@@ -26,10 +26,7 @@ public class Animation: MediaTiming {
     internal init() {}
 
     internal func populateAnimation(animation: CAAnimation) {
-        if let timingFunction = self.timingFunction {
-            animation.timingFunction = timingFunction.function()
-        }
-
+        animation.timingFunction = self.timingFunction?.function()
         animation.removedOnCompletion = removedOnCompletion
         animation.beginTime = beginTime
         animation.duration = duration

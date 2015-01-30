@@ -13,7 +13,7 @@ public class BasicAnimation<T>: PropertyAnimation<T> {
     public var toValue: T! = nil
     public var byValue: T! = nil
 
-    override public init() {}
+    public override init() {}
 
     public init(fromValue: T! = nil, toValue: T! = nil, byValue: T! = nil, withDuration aDuration: CFTimeInterval? = nil) {
         super.init()
@@ -27,7 +27,7 @@ public class BasicAnimation<T>: PropertyAnimation<T> {
         }
     }
 
-    override internal func animationForProperty(property: Property<T>) -> CABasicAnimation! {
+    internal override func animationForProperty(property: Property<T>) -> CABasicAnimation! {
         var animation = CABasicAnimation()
         populateAnimation(animation, forProperty: property)
         return animation
@@ -36,17 +36,9 @@ public class BasicAnimation<T>: PropertyAnimation<T> {
     internal func populateAnimation(animation: CABasicAnimation, forProperty property: Property<T>) {
         super.populateAnimation(animation, forProperty: property)
 
-        if let fromValue = self.fromValue {
-            animation.fromValue = property.pack(fromValue)
-        }
-
-        if let toValue = self.toValue {
-            animation.toValue = property.pack(toValue)
-        }
-
-        if let byValue = self.byValue {
-            animation.byValue = property.pack(byValue)
-        }
+        animation.fromValue = map(self.fromValue, property.pack)
+        animation.toValue = map(self.toValue, property.pack)
+        animation.byValue = map(self.byValue, property.pack)
     }
 }
 
@@ -69,13 +61,9 @@ postfix public func ... <T>(lhs: T) -> BasicAnimation<T> {
 infix operator ~ { precedence 131 }
 
 public func ~ <T>(lhs: Range<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
-    var animation = BasicAnimation(fromValue: lhs.startIndex, toValue: lhs.endIndex)
-    animation.timingFunction = rhs
-    return animation
+    return BasicAnimation(fromValue: lhs.startIndex, toValue: lhs.endIndex) ~ rhs
 }
 
 public func ~ <I: IntervalType, T where I.Bound == T>(lhs: I, rhs: MediaTimingFunction) -> BasicAnimation<T> {
-    var animation = BasicAnimation(fromValue: lhs.start, toValue: lhs.end)
-    animation.timingFunction = rhs
-    return animation
+    return BasicAnimation(fromValue: lhs.start, toValue: lhs.end) ~ rhs
 }

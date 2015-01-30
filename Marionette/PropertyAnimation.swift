@@ -23,9 +23,6 @@ public class PropertyAnimation<T>: Animation {
         animation.keyPath = property.keyPath
         animation.additive = additive
         animation.cumulative = cumulative
-
-        if let valueFunction = self.valueFunction {
-            animation.valueFunction = valueFunction.function()
-        }
+        animation.valueFunction = self.valueFunction?.function()
     }
 }
