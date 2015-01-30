@@ -42,8 +42,7 @@ public class Animation: MediaTiming {
     }
 }
 
-// TODO: Precedence, Associativity
-infix operator ~ { }
+infix operator ~ { precedence 131 }
 
 public func ~ <A: Animation>(lhs: A, rhs: MediaTimingFunction) -> A {
     lhs.timingFunction = rhs

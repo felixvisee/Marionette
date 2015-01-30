@@ -54,22 +54,19 @@ public func ... <T>(lhs: T, rhs: T) -> BasicAnimation<T> {
     return BasicAnimation(fromValue: lhs, toValue: rhs)
 }
 
-// TODO: Precedence, Associativity
 prefix operator ... { }
 
 prefix public func ... <T>(rhs: T) -> BasicAnimation<T> {
     return BasicAnimation(toValue: rhs)
 }
 
-// TODO: Precedence, Associativity
 postfix operator ... { }
 
 postfix public func ... <T>(lhs: T) -> BasicAnimation<T> {
     return BasicAnimation(fromValue: lhs)
 }
 
-// TODO: Precedence, Associativity
-infix operator ~ { }
+infix operator ~ { precedence 131 }
 
 public func ~ <T>(lhs: Range<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
     var animation = BasicAnimation(fromValue: lhs.startIndex, toValue: lhs.endIndex)

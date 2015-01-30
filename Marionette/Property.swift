@@ -42,7 +42,6 @@ public class Property<T> {
     }
 }
 
-// TODO: Using the pattern matching operator may lead to confusion.
 public func ~= <T>(lhs: Property<T>, rhs: PropertyAnimation<T>) {
     let animation = rhs.animationForProperty(lhs)
     lhs.context.animations.append(animation)

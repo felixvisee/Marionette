@@ -103,8 +103,7 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
     }
 }
 
-// TODO: Precedence, Associativity
-infix operator ~ { }
+infix operator ~ { precedence 131 }
 
 public func ~ <T>(lhs: [(Float, T)], rhs: MediaTimingFunction) -> KeyframeAnimation<T> {
     var animation = KeyframeAnimation(keyFrames: lhs)
