@@ -58,7 +58,7 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
 
     public override init() {}
 
-    public init(keyFrames: [(Float, T)], withDuration aDuration: CFTimeInterval? = nil) {
+    public init(keyFrames: [(Float, T)], duration aDuration: CFTimeInterval? = nil) {
         super.init()
 
         let (keyTimes, values) = unzip(keyFrames)
@@ -71,7 +71,7 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
         }
     }
 
-    public init(path: CGPath, withDuration aDuration: CFTimeInterval? = nil) {
+    public init(path: CGPath, duration aDuration: CFTimeInterval? = nil) {
         super.init()
 
         self.path = path

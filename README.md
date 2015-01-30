@@ -7,7 +7,7 @@ Concise and type safe `CALayer` animations! *Experimental*
 Let's start with an example demonstrating how to move a layer from `(50, 50)` to `(150, 150)` while also changing its background color from red to blue:
 
 ```swift
-animateLayer(layer, withDuration: 5, timingFunction: .EaseInEaseOut) { layer in
+animate(layer, duration: 5, timingFunction: .EaseInEaseOut) { layer in
   layer.position ~= CGPointMake(50, 50) ... CGPointMake(150, 150)
   layer.backgroundColor ~= UIColor.redColor().CGColor ... UIColor.blueColor().CGColor
 }
@@ -34,28 +34,28 @@ layer.addAnimation(animationGroup, forKey: nil)
 
 ## Usage
 
-The `animateLayer` function takes your `CALayer` as well as a closure in which you create the animations for your layer:
+The `animate` function takes your `CALayer` as well as a closure in which you create the animations for your layer:
 
 ```swift
-animateLayer(layer) { layer in
+animate(layer) { layer in
   layer.cornerRadius ~= 0 ... 10
   return
 }
 ```
 
-If you create more than one animation inside the closure, they are grouped together using `CAAnimationGroup`. Optionally, `animateLayer` takes a duration and timing function to configure this group:
+If you create more than one animation inside the closure, they are grouped together using `CAAnimationGroup`. Optionally, `animate` takes a duration and timing function to configure this group:
 
 ```swift
-animateLayer(layer, withDuration: 5, timingFunction: .EaseInEaseOut) { layer in
+animate(layer, duration: 5, timingFunction: .EaseInEaseOut) { layer in
   layer.shadowOpacity ~= 0 ... 0.5
   layer.shadowOffset ~= CGSizeMake(0, 0) ... CGSizeMake(0, -3)
 }
 ```
 
-Animations are automatically added to your layer. `animateLayer` also takes an optional key to be used when adding your animations:
+Animations are automatically added to your layer. `animate` also takes an optional key to be used when adding your animations:
 
 ```swift
-animateLayer(layer, forKey: "boundsChange", block: { layer in
+animate(layer, key: "boundsChange", block: { layer in
   layer.bounds ~= CGRectMake(0, 0, 100, 100) ... CGRectMake(0, 0, 50, 50)
 })
 ```
@@ -85,7 +85,7 @@ The `transaction` and `transactionWithDuration` functions can be used to ease wo
 
 ```swift
 transactionWithDuration(5, timingFunction: .EaseIn) {
-  animateLayer(...) { ... }
+  animate(...) { ... }
 }
 ```
 

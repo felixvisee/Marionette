@@ -8,19 +8,19 @@
 
 import UIKit
 
-public func animateLayer(layer: CALayer, block: (LayerProxy) -> ()) {
-    animateLayer(layer, withDuration: nil, timingFunction: nil, forKey: nil, block: block)
+public func animate(layer: CALayer, block: (LayerProxy) -> ()) {
+    animate(layer, duration: nil, timingFunction: nil, key: nil, block: block)
 }
 
-public func animateLayer(layer: CALayer, withDuration aDuration: CFTimeInterval, block: (LayerProxy) -> ()) {
-    animateLayer(layer, withDuration: aDuration, timingFunction: nil, forKey: nil, block: block)
+public func animate(layer: CALayer, duration aDuration: CFTimeInterval, block: (LayerProxy) -> ()) {
+    animate(layer, duration: aDuration, timingFunction: nil, key: nil, block: block)
 }
 
-public func animateLayer(layer: CALayer, withDuration aDuration: CFTimeInterval, timingFunction aTimingFunction: MediaTimingFunction, block: (LayerProxy) -> ()) {
-    animateLayer(layer, withDuration: aDuration, timingFunction: aTimingFunction, forKey: nil, block: block)
+public func animate(layer: CALayer, duration aDuration: CFTimeInterval, timingFunction aTimingFunction: MediaTimingFunction, block: (LayerProxy) -> ()) {
+    animate(layer, duration: aDuration, timingFunction: aTimingFunction, key: nil, block: block)
 }
 
-public func animateLayer(layer: CALayer, withDuration aDuration: CFTimeInterval? = nil, timingFunction aTimingFunction: MediaTimingFunction? = nil, forKey key: String? = nil, #block: (LayerProxy) -> ()) {
+public func animate(layer: CALayer, duration aDuration: CFTimeInterval? = nil, timingFunction aTimingFunction: MediaTimingFunction? = nil, key: String? = nil, #block: (LayerProxy) -> ()) {
     let context = Context()
 
     block(LayerProxy(context, layer))

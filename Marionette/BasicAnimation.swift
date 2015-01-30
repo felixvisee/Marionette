@@ -15,7 +15,7 @@ public class BasicAnimation<T>: PropertyAnimation<T> {
 
     public override init() {}
 
-    public init(fromValue: T! = nil, toValue: T! = nil, byValue: T! = nil, withDuration aDuration: CFTimeInterval? = nil) {
+    public init(fromValue: T! = nil, toValue: T! = nil, byValue: T! = nil, duration aDuration: CFTimeInterval? = nil) {
         super.init()
 
         self.fromValue = fromValue

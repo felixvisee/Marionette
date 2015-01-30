@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        animateLayer(box.layer, withDuration: 5, timingFunction: .EaseInEaseOut) { layer in
+        animate(box.layer, duration: 5, timingFunction: .EaseInEaseOut) { layer in
             layer.position ~= CGPointMake(50, 50) ... CGPointMake(150, 150)
             layer.position.value = CGPointMake(150, 150)
 
