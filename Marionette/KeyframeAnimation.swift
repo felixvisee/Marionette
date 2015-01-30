@@ -61,11 +61,10 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
     public init(keyFrames: [(Float, T)], withDuration aDuration: CFTimeInterval? = nil) {
         super.init()
 
-        values = []; keyTimes = []
-        for (keyTime, value) in keyFrames {
-            values.append(value)
-            keyTimes.append(keyTime)
-        }
+        let (keyTimes, values) = unzip(keyFrames)
+
+        self.values = values
+        self.keyTimes = keyTimes
 
         if let duration = aDuration {
             self.duration = duration

@@ -16,6 +16,7 @@
 		DC6246781A79AF2B002C1566 /* MediaTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6246771A79AF2B002C1566 /* MediaTiming.swift */; };
 		DC62467A1A79AF89002C1566 /* MediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6246791A79AF89002C1566 /* MediaTimingFunction.swift */; };
 		DC62467C1A79B008002C1566 /* ValueFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62467B1A79B008002C1566 /* ValueFunction.swift */; };
+		DC751E671A7BD00A0099D552 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC751E661A7BD00A0099D552 /* Utils.swift */; };
 		DC7F1EA41A7BB1B70015BD0F /* PropertyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA31A7BB1B70015BD0F /* PropertyAnimation.swift */; };
 		DC7F1EA61A7BB1F80015BD0F /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA51A7BB1F80015BD0F /* BasicAnimation.swift */; };
 		DC7F1EA81A7BB2340015BD0F /* KeyframeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */; };
@@ -56,6 +57,7 @@
 		DC6246771A79AF2B002C1566 /* MediaTiming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTiming.swift; sourceTree = "<group>"; };
 		DC6246791A79AF89002C1566 /* MediaTimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTimingFunction.swift; sourceTree = "<group>"; };
 		DC62467B1A79B008002C1566 /* ValueFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueFunction.swift; sourceTree = "<group>"; };
+		DC751E661A7BD00A0099D552 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		DC7F1EA31A7BB1B70015BD0F /* PropertyAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyAnimation.swift; sourceTree = "<group>"; };
 		DC7F1EA51A7BB1F80015BD0F /* BasicAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimation.swift; sourceTree = "<group>"; };
 		DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyframeAnimation.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				DC6246751A795BE1002C1566 /* Property.swift */,
 				DC7F1EA31A7BB1B70015BD0F /* PropertyAnimation.swift */,
 				DC3ACDE31A7A677D00A115E9 /* Transaction.swift */,
+				DC751E661A7BD00A0099D552 /* Utils.swift */,
 				DC62467B1A79B008002C1566 /* ValueFunction.swift */,
 				DCEA70291A792320008BB209 /* Supporting Files */,
 			);
@@ -334,6 +337,7 @@
 				DC7F1EA81A7BB2340015BD0F /* KeyframeAnimation.swift in Sources */,
 				DC7F1EA61A7BB1F80015BD0F /* BasicAnimation.swift in Sources */,
 				DC6246721A7928C0002C1566 /* Animation.swift in Sources */,
+				DC751E671A7BD00A0099D552 /* Utils.swift in Sources */,
 				DC62467C1A79B008002C1566 /* ValueFunction.swift in Sources */,
 				DCEA706C1A79242A008BB209 /* Animate.swift in Sources */,
 				DC6246781A79AF2B002C1566 /* MediaTiming.swift in Sources */,
