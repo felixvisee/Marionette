@@ -16,6 +16,9 @@
 		DC6246781A79AF2B002C1566 /* MediaTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6246771A79AF2B002C1566 /* MediaTiming.swift */; };
 		DC62467A1A79AF89002C1566 /* MediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6246791A79AF89002C1566 /* MediaTimingFunction.swift */; };
 		DC62467C1A79B008002C1566 /* ValueFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62467B1A79B008002C1566 /* ValueFunction.swift */; };
+		DC7F1EA41A7BB1B70015BD0F /* PropertyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA31A7BB1B70015BD0F /* PropertyAnimation.swift */; };
+		DC7F1EA61A7BB1F80015BD0F /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA51A7BB1F80015BD0F /* BasicAnimation.swift */; };
+		DC7F1EA81A7BB2340015BD0F /* KeyframeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */; };
 		DCEA702C1A792320008BB209 /* Marionette.h in Headers */ = {isa = PBXBuildFile; fileRef = DCEA702B1A792320008BB209 /* Marionette.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCEA70321A792320008BB209 /* Marionette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEA70261A792320008BB209 /* Marionette.framework */; };
 		DCEA70391A792320008BB209 /* MarionetteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEA70381A792320008BB209 /* MarionetteTests.swift */; };
@@ -53,6 +56,9 @@
 		DC6246771A79AF2B002C1566 /* MediaTiming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTiming.swift; sourceTree = "<group>"; };
 		DC6246791A79AF89002C1566 /* MediaTimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTimingFunction.swift; sourceTree = "<group>"; };
 		DC62467B1A79B008002C1566 /* ValueFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueFunction.swift; sourceTree = "<group>"; };
+		DC7F1EA31A7BB1B70015BD0F /* PropertyAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyAnimation.swift; sourceTree = "<group>"; };
+		DC7F1EA51A7BB1F80015BD0F /* BasicAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimation.swift; sourceTree = "<group>"; };
+		DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyframeAnimation.swift; sourceTree = "<group>"; };
 		DCEA70261A792320008BB209 /* Marionette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Marionette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCEA702A1A792320008BB209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCEA702B1A792320008BB209 /* Marionette.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marionette.h; sourceTree = "<group>"; };
@@ -122,11 +128,14 @@
 				DCEA702B1A792320008BB209 /* Marionette.h */,
 				DCEA706B1A79242A008BB209 /* Animate.swift */,
 				DC6246711A7928C0002C1566 /* Animation.swift */,
+				DC7F1EA51A7BB1F80015BD0F /* BasicAnimation.swift */,
 				DC3ACDDF1A7A3B0300A115E9 /* Context.swift */,
+				DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */,
 				DC6246731A7943C1002C1566 /* LayerProxy.swift */,
 				DC6246771A79AF2B002C1566 /* MediaTiming.swift */,
 				DC6246791A79AF89002C1566 /* MediaTimingFunction.swift */,
 				DC6246751A795BE1002C1566 /* Property.swift */,
+				DC7F1EA31A7BB1B70015BD0F /* PropertyAnimation.swift */,
 				DC3ACDE31A7A677D00A115E9 /* Transaction.swift */,
 				DC62467B1A79B008002C1566 /* ValueFunction.swift */,
 				DCEA70291A792320008BB209 /* Supporting Files */,
@@ -321,6 +330,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC62467A1A79AF89002C1566 /* MediaTimingFunction.swift in Sources */,
+				DC7F1EA41A7BB1B70015BD0F /* PropertyAnimation.swift in Sources */,
+				DC7F1EA81A7BB2340015BD0F /* KeyframeAnimation.swift in Sources */,
+				DC7F1EA61A7BB1F80015BD0F /* BasicAnimation.swift in Sources */,
 				DC6246721A7928C0002C1566 /* Animation.swift in Sources */,
 				DC62467C1A79B008002C1566 /* ValueFunction.swift in Sources */,
 				DCEA706C1A79242A008BB209 /* Animate.swift in Sources */,
