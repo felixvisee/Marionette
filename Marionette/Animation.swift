@@ -10,7 +10,7 @@ import UIKit
 
 public class Animation: MediaTiming {
     // Animation
-    public var timingFunction: MediaTimingFunction! = nil
+    public var timingFunction: MediaTimingFunction? = nil
     public var removedOnCompletion: Bool = true
 
     // MediaTiming

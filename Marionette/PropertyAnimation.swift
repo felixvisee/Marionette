@@ -11,7 +11,7 @@ import UIKit
 public class PropertyAnimation<T>: Animation {
     public var additive: Bool = false
     public var cumulative: Bool = false
-    public var valueFunction: ValueFunction! = nil
+    public var valueFunction: ValueFunction? = nil
 
     internal func animationForProperty(property: Property<T>) -> CAPropertyAnimation! {
         return nil

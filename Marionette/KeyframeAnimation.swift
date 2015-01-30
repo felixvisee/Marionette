@@ -46,15 +46,15 @@ public enum RotationMode {
 }
 
 public class KeyframeAnimation<T>: PropertyAnimation<T> {
-    public var values: [T]! = nil
-    public var path: CGPath! = nil
-    public var keyTimes: [Float]! = nil
-    public var timingFunctions: [MediaTimingFunction]! = nil
+    public var values: [T]? = nil
+    public var path: CGPath? = nil
+    public var keyTimes: [Float]? = nil
+    public var timingFunctions: [MediaTimingFunction]? = nil
     public var calculationMode: CalculationMode = .Linear
-    public var tensionValues: [Float]! = nil
-    public var continuityValues: [Float]! = nil
-    public var biasValues: [Float]! = nil
-    public var rotationMode: RotationMode! = nil
+    public var tensionValues: [Float]? = nil
+    public var continuityValues: [Float]? = nil
+    public var biasValues: [Float]? = nil
+    public var rotationMode: RotationMode? = nil
 
     override public init() {}
 
