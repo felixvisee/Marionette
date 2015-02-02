@@ -13,8 +13,6 @@ public class BasicAnimation<T>: PropertyAnimation<T> {
     public var toValue: T! = nil
     public var byValue: T! = nil
 
-    public override init() {}
-
     public init(fromValue: T! = nil, toValue: T! = nil, byValue: T! = nil, duration aDuration: CFTimeInterval? = nil) {
         super.init()
 
