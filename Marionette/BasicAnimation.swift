@@ -78,6 +78,10 @@ infix operator ~ {
     precedence 131
 }
 
+public func ~ <T>(lhs: T, rhs: MediaTimingFunction) -> BasicAnimation<T> {
+    return ...lhs ~ rhs
+}
+
 public func ~ <T>(lhs: Range<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
     return animation(lhs) ~ rhs
 }
