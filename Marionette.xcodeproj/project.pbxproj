@@ -20,6 +20,10 @@
 		DC7F1EA41A7BB1B70015BD0F /* PropertyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA31A7BB1B70015BD0F /* PropertyAnimation.swift */; };
 		DC7F1EA61A7BB1F80015BD0F /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA51A7BB1F80015BD0F /* BasicAnimation.swift */; };
 		DC7F1EA81A7BB2340015BD0F /* KeyframeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */; };
+		DCAF6E131A7FCC6100350BD7 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAF6E111A7FCC6100350BD7 /* Nimble.framework */; };
+		DCAF6E141A7FCC6100350BD7 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAF6E121A7FCC6100350BD7 /* Quick.framework */; };
+		DCAF6E1C1A7FD4DF00350BD7 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCAF6E121A7FCC6100350BD7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCAF6E1D1A7FD4E200350BD7 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCAF6E111A7FCC6100350BD7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCEA702C1A792320008BB209 /* Marionette.h in Headers */ = {isa = PBXBuildFile; fileRef = DCEA702B1A792320008BB209 /* Marionette.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCEA70321A792320008BB209 /* Marionette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEA70261A792320008BB209 /* Marionette.framework */; };
 		DCEA70391A792320008BB209 /* MarionetteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEA70381A792320008BB209 /* MarionetteTests.swift */; };
@@ -48,6 +52,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DCAF6E191A7FD49D00350BD7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DCAF6E1D1A7FD4E200350BD7 /* Nimble.framework in CopyFiles */,
+				DCAF6E1C1A7FD4DF00350BD7 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DC3ACDDF1A7A3B0300A115E9 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		DC3ACDE31A7A677D00A115E9 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -61,6 +79,8 @@
 		DC7F1EA31A7BB1B70015BD0F /* PropertyAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyAnimation.swift; sourceTree = "<group>"; };
 		DC7F1EA51A7BB1F80015BD0F /* BasicAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimation.swift; sourceTree = "<group>"; };
 		DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyframeAnimation.swift; sourceTree = "<group>"; };
+		DCAF6E111A7FCC6100350BD7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		DCAF6E121A7FCC6100350BD7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		DCEA70261A792320008BB209 /* Marionette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Marionette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCEA702A1A792320008BB209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCEA702B1A792320008BB209 /* Marionette.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marionette.h; sourceTree = "<group>"; };
@@ -90,6 +110,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCEA70321A792320008BB209 /* Marionette.framework in Frameworks */,
+				DCAF6E141A7FCC6100350BD7 /* Quick.framework in Frameworks */,
+				DCAF6E131A7FCC6100350BD7 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				DCEA70381A792320008BB209 /* MarionetteTests.swift */,
+				DCAF6E111A7FCC6100350BD7 /* Nimble.framework */,
+				DCAF6E121A7FCC6100350BD7 /* Quick.framework */,
 				DCEA70361A792320008BB209 /* Supporting Files */,
 			);
 			path = MarionetteTests;
@@ -231,6 +255,7 @@
 				DCEA702D1A792320008BB209 /* Sources */,
 				DCEA702E1A792320008BB209 /* Frameworks */,
 				DCEA702F1A792320008BB209 /* Resources */,
+				DCAF6E191A7FD49D00350BD7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -524,6 +549,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -541,6 +567,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MarionetteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
