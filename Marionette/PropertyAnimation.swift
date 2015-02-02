@@ -26,3 +26,13 @@ public class PropertyAnimation<T>: Animation {
         animation.valueFunction = self.valueFunction?.function()
     }
 }
+
+infix operator ~= {
+    associativity none
+    precedence 130
+}
+
+public func ~= <T>(lhs: Property<T>, rhs: PropertyAnimation<T>) {
+    let animation = rhs.animationForProperty(lhs)
+    lhs.context.animations.append(animation)
+}

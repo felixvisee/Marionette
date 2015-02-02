@@ -102,10 +102,25 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
     }
 }
 
-infix operator ~ { precedence 131 }
+private func animation<T>(keyFrames: [(Float, T)]) -> KeyframeAnimation<T> {
+    return KeyframeAnimation(keyFrames: keyFrames)
+}
+
+private func animation(path: CGPath) -> KeyframeAnimation<CGPoint> {
+    return KeyframeAnimation(path: path)
+}
+
+infix operator ~ {
+    associativity none
+    precedence 131
+}
 
 public func ~ <T>(lhs: [(Float, T)], rhs: MediaTimingFunction) -> KeyframeAnimation<T> {
-    return KeyframeAnimation(keyFrames: lhs) ~ rhs
+    return animation(lhs) ~ rhs
+}
+
+public func ~ (lhs: CGPath, rhs: MediaTimingFunction) -> KeyframeAnimation<CGPoint> {
+    return animation(lhs) ~ rhs
 }
 
 public func ~ <T>(lhs: KeyframeAnimation<T>, rhs: [MediaTimingFunction]) -> KeyframeAnimation<T> {
@@ -114,5 +129,22 @@ public func ~ <T>(lhs: KeyframeAnimation<T>, rhs: [MediaTimingFunction]) -> Keyf
 }
 
 public func ~ <T>(lhs: [(Float, T)], rhs: [MediaTimingFunction]) -> KeyframeAnimation<T> {
-    return KeyframeAnimation(keyFrames: lhs) ~ rhs
+    return animation(lhs) ~ rhs
+}
+
+public func ~ (lhs: CGPath, rhs: [MediaTimingFunction]) -> KeyframeAnimation<CGPoint> {
+    return animation(lhs) ~ rhs
+}
+
+infix operator ~= {
+    associativity none
+    precedence 130
+}
+
+public func ~= <T>(lhs: Property<T>, rhs: [(Float, T)]) {
+    lhs ~= animation(rhs)
+}
+
+public func ~= (lhs: Property<CGPoint>, rhs: CGPath) {
+    lhs ~= animation(rhs)
 }

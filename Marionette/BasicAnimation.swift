@@ -40,6 +40,23 @@ public class BasicAnimation<T>: PropertyAnimation<T> {
     }
 }
 
+private func animation<T>(range: Range<T>) -> BasicAnimation<T> {
+    return BasicAnimation(fromValue: range.startIndex, toValue: range.isEmpty ? range.endIndex : advance(range.startIndex, distance(range.startIndex, range.endIndex) - 1))
+}
+
+private func animation<T>(interval: ClosedInterval<T>) -> BasicAnimation<T> {
+    return BasicAnimation(fromValue: interval.start, toValue: interval.end)
+}
+
+private func animation<T: ForwardIndexType>(interval: HalfOpenInterval<T>) -> BasicAnimation<T> {
+    return animation(Range(start: interval.start, end: interval.end))
+}
+
+infix operator ... {
+    associativity none
+    precedence 135
+}
+
 public func ... <T>(lhs: T, rhs: T) -> BasicAnimation<T> {
     return BasicAnimation(fromValue: lhs, toValue: rhs)
 }
@@ -56,16 +73,40 @@ postfix public func ... <T>(lhs: T) -> BasicAnimation<T> {
     return BasicAnimation(fromValue: lhs)
 }
 
-infix operator ~ { precedence 131 }
+infix operator ~ {
+    associativity none
+    precedence 131
+}
 
 public func ~ <T>(lhs: Range<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
-    return BasicAnimation(fromValue: lhs.startIndex, toValue: lhs.isEmpty ? lhs.endIndex : advance(lhs.startIndex, distance(lhs.startIndex, lhs.endIndex) - 1)) ~ rhs
+    return animation(lhs) ~ rhs
 }
 
 public func ~ <T>(lhs: ClosedInterval<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
-    return BasicAnimation(fromValue: lhs.start, toValue: lhs.end) ~ rhs
+    return animation(lhs) ~ rhs
 }
 
 public func ~ <T: ForwardIndexType>(lhs: HalfOpenInterval<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
-    return Range(start: lhs.start, end: lhs.end) ~ rhs
+    return animation(lhs) ~ rhs
+}
+
+infix operator ~= {
+    associativity none
+    precedence 130
+}
+
+public func ~= <T>(lhs: Property<T>, rhs: T) {
+    lhs ~= ...rhs
+}
+
+public func ~= <T>(lhs: Property<T>, rhs: Range<T>) {
+    lhs ~= animation(rhs)
+}
+
+public func ~= <T>(lhs: Property<T>, rhs: ClosedInterval<T>) {
+    lhs ~= animation(rhs)
+}
+
+public func ~= <T: ForwardIndexType>(lhs: Property<T>, rhs: HalfOpenInterval<T>) {
+    lhs ~= animation(rhs)
 }
