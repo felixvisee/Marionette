@@ -22,11 +22,12 @@
 		DC7F1EA81A7BB2340015BD0F /* KeyframeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */; };
 		DCAF6E131A7FCC6100350BD7 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAF6E111A7FCC6100350BD7 /* Nimble.framework */; };
 		DCAF6E141A7FCC6100350BD7 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAF6E121A7FCC6100350BD7 /* Quick.framework */; };
+		DCAF6E181A7FD24B00350BD7 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF6E171A7FD24B00350BD7 /* BasicAnimationTests.swift */; };
 		DCAF6E1C1A7FD4DF00350BD7 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCAF6E121A7FCC6100350BD7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCAF6E1D1A7FD4E200350BD7 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCAF6E111A7FCC6100350BD7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCAF6E1F1A80118200350BD7 /* KeyframeAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF6E1E1A80118200350BD7 /* KeyframeAnimationTests.swift */; };
 		DCEA702C1A792320008BB209 /* Marionette.h in Headers */ = {isa = PBXBuildFile; fileRef = DCEA702B1A792320008BB209 /* Marionette.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCEA70321A792320008BB209 /* Marionette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEA70261A792320008BB209 /* Marionette.framework */; };
-		DCEA70391A792320008BB209 /* MarionetteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEA70381A792320008BB209 /* MarionetteTests.swift */; };
 		DCEA704B1A792353008BB209 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEA704A1A792353008BB209 /* AppDelegate.swift */; };
 		DCEA704D1A792353008BB209 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEA704C1A792353008BB209 /* ViewController.swift */; };
 		DCEA70501A792353008BB209 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCEA704E1A792353008BB209 /* Main.storyboard */; };
@@ -81,12 +82,13 @@
 		DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyframeAnimation.swift; sourceTree = "<group>"; };
 		DCAF6E111A7FCC6100350BD7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		DCAF6E121A7FCC6100350BD7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		DCAF6E171A7FD24B00350BD7 /* BasicAnimationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimationTests.swift; sourceTree = "<group>"; };
+		DCAF6E1E1A80118200350BD7 /* KeyframeAnimationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyframeAnimationTests.swift; sourceTree = "<group>"; };
 		DCEA70261A792320008BB209 /* Marionette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Marionette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCEA702A1A792320008BB209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCEA702B1A792320008BB209 /* Marionette.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marionette.h; sourceTree = "<group>"; };
 		DCEA70311A792320008BB209 /* MarionetteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarionetteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCEA70371A792320008BB209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCEA70381A792320008BB209 /* MarionetteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarionetteTests.swift; sourceTree = "<group>"; };
 		DCEA70461A792353008BB209 /* MarionetteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarionetteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCEA70491A792353008BB209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCEA704A1A792353008BB209 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -179,9 +181,10 @@
 		DCEA70351A792320008BB209 /* MarionetteTests */ = {
 			isa = PBXGroup;
 			children = (
-				DCEA70381A792320008BB209 /* MarionetteTests.swift */,
 				DCAF6E111A7FCC6100350BD7 /* Nimble.framework */,
 				DCAF6E121A7FCC6100350BD7 /* Quick.framework */,
+				DCAF6E171A7FD24B00350BD7 /* BasicAnimationTests.swift */,
+				DCAF6E1E1A80118200350BD7 /* KeyframeAnimationTests.swift */,
 				DCEA70361A792320008BB209 /* Supporting Files */,
 			);
 			path = MarionetteTests;
@@ -377,7 +380,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCEA70391A792320008BB209 /* MarionetteTests.swift in Sources */,
+				DCAF6E1F1A80118200350BD7 /* KeyframeAnimationTests.swift in Sources */,
+				DCAF6E181A7FD24B00350BD7 /* BasicAnimationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
