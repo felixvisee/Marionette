@@ -45,7 +45,7 @@ public enum RotationMode {
     }
 }
 
-public class KeyframeAnimation<T>: PropertyAnimation<T> {
+public class KeyframeAnimation<T>: PropertyAnimation<T, CAKeyframeAnimation> {
     public var values: [T]? = nil
     public var path: CGPath? = nil
     public var keyTimes: [Float]? = nil
@@ -87,7 +87,7 @@ public class KeyframeAnimation<T>: PropertyAnimation<T> {
         return animation
     }
 
-    internal func populateAnimation(animation: CAKeyframeAnimation, forProperty property: Property<T>) {
+    internal override func populateAnimation(animation: CAKeyframeAnimation, forProperty property: Property<T>) {
         super.populateAnimation(animation, forProperty: property)
 
         animation.values = values?.map(property.pack)
@@ -141,10 +141,10 @@ infix operator ~= {
     precedence 130
 }
 
-public func ~= <T>(lhs: Property<T>, rhs: [(Float, T)]) {
-    lhs ~= animation(rhs)
+public func ~= <T>(lhs: Property<T>, rhs: [(Float, T)]) -> CAKeyframeAnimation {
+    return lhs ~= animation(rhs)
 }
 
-public func ~= (lhs: Property<CGPoint>, rhs: CGPath) {
-    lhs ~= animation(rhs)
+public func ~= (lhs: Property<CGPoint>, rhs: CGPath) -> CAKeyframeAnimation {
+    return lhs ~= animation(rhs)
 }

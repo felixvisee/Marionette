@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BasicAnimation<T>: PropertyAnimation<T> {
+public class BasicAnimation<T>: PropertyAnimation<T, CABasicAnimation> {
     public var fromValue: T! = nil
     public var toValue: T! = nil
     public var byValue: T! = nil
@@ -31,7 +31,7 @@ public class BasicAnimation<T>: PropertyAnimation<T> {
         return animation
     }
 
-    internal func populateAnimation(animation: CABasicAnimation, forProperty property: Property<T>) {
+    internal override func populateAnimation(animation: CABasicAnimation, forProperty property: Property<T>) {
         super.populateAnimation(animation, forProperty: property)
 
         animation.fromValue = map(self.fromValue, property.pack)
@@ -99,18 +99,18 @@ infix operator ~= {
     precedence 130
 }
 
-public func ~= <T>(lhs: Property<T>, rhs: T) {
-    lhs ~= ...rhs
+public func ~= <T>(lhs: Property<T>, rhs: T) -> CABasicAnimation {
+    return lhs ~= ...rhs
 }
 
-public func ~= <T>(lhs: Property<T>, rhs: Range<T>) {
-    lhs ~= animation(rhs)
+public func ~= <T>(lhs: Property<T>, rhs: Range<T>) -> CABasicAnimation {
+    return lhs ~= animation(rhs)
 }
 
-public func ~= <T>(lhs: Property<T>, rhs: ClosedInterval<T>) {
-    lhs ~= animation(rhs)
+public func ~= <T>(lhs: Property<T>, rhs: ClosedInterval<T>) -> CABasicAnimation {
+    return lhs ~= animation(rhs)
 }
 
-public func ~= <T: ForwardIndexType>(lhs: Property<T>, rhs: HalfOpenInterval<T>) {
-    lhs ~= animation(rhs)
+public func ~= <T: ForwardIndexType>(lhs: Property<T>, rhs: HalfOpenInterval<T>) -> CABasicAnimation {
+    return lhs ~= animation(rhs)
 }

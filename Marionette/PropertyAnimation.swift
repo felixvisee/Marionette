@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class PropertyAnimation<T>: Animation {
+public class PropertyAnimation<T, U: CAPropertyAnimation>: Animation {
     public var additive: Bool = false
     public var cumulative: Bool = false
     public var valueFunction: ValueFunction? = nil
 
-    internal func animationForProperty(property: Property<T>) -> CAPropertyAnimation! {
+    internal func animationForProperty(property: Property<T>) -> U! {
         return nil
     }
 
-    internal func populateAnimation(animation: CAPropertyAnimation, forProperty property: Property<T>) {
+    internal func populateAnimation(animation: U, forProperty property: Property<T>) {
         super.populateAnimation(animation)
 
         animation.keyPath = property.keyPath
@@ -32,7 +32,8 @@ infix operator ~= {
     precedence 130
 }
 
-public func ~= <T>(lhs: Property<T>, rhs: PropertyAnimation<T>) {
+public func ~= <T, U: CAPropertyAnimation>(lhs: Property<T>, rhs: PropertyAnimation<T, U>) -> U {
     let animation = rhs.animationForProperty(lhs)
     lhs.context.animations.append(animation)
+    return animation
 }
