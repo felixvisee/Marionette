@@ -59,9 +59,13 @@ postfix public func ... <T>(lhs: T) -> BasicAnimation<T> {
 infix operator ~ { precedence 131 }
 
 public func ~ <T>(lhs: Range<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
-    return BasicAnimation(fromValue: lhs.startIndex, toValue: lhs.endIndex) ~ rhs
+    return BasicAnimation(fromValue: lhs.startIndex, toValue: lhs.isEmpty ? lhs.endIndex : advance(lhs.startIndex, distance(lhs.startIndex, lhs.endIndex) - 1)) ~ rhs
 }
 
-public func ~ <I: IntervalType, T where I.Bound == T>(lhs: I, rhs: MediaTimingFunction) -> BasicAnimation<T> {
+public func ~ <T>(lhs: ClosedInterval<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
     return BasicAnimation(fromValue: lhs.start, toValue: lhs.end) ~ rhs
+}
+
+public func ~ <T: ForwardIndexType>(lhs: HalfOpenInterval<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
+    return Range(start: lhs.start, end: lhs.end) ~ rhs
 }
