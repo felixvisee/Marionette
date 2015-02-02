@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum FillMode {
+public enum FillMode: Equatable {
     case Removed
     case Forwards
     case Backwards
@@ -26,6 +26,10 @@ public enum FillMode {
             return kCAFillModeBoth
         }
     }
+}
+
+public func == (lhs: FillMode, rhs: FillMode) -> Bool {
+    return lhs.name == rhs.name
 }
 
 public protocol MediaTiming {

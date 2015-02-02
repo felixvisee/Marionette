@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum ValueFunction {
+public enum ValueFunction: Equatable {
     case RotateX
     case RotateY
     case RotateZ
@@ -51,4 +51,8 @@ public enum ValueFunction {
     public func function() -> CAValueFunction {
         return CAValueFunction(name: name)
     }
+}
+
+public func == (lhs: ValueFunction, rhs: ValueFunction) -> Bool {
+    return lhs.name == rhs.name
 }

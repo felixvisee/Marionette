@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum CalculationMode {
+public enum CalculationMode: Equatable {
     case Linear
     case Discrete
     case Paced
@@ -31,7 +31,11 @@ public enum CalculationMode {
     }
 }
 
-public enum RotationMode {
+public func == (lhs: CalculationMode, rhs: CalculationMode) -> Bool {
+    return lhs.name == rhs.name
+}
+
+public enum RotationMode: Equatable {
     case Auto
     case AutoReverse
 
@@ -43,6 +47,10 @@ public enum RotationMode {
             return kCAAnimationRotateAutoReverse
         }
     }
+}
+
+public func == (lhs: RotationMode, rhs: RotationMode) -> Bool {
+    return lhs.name == rhs.name
 }
 
 public class KeyframeAnimation<T>: PropertyAnimation<T, CAKeyframeAnimation> {
