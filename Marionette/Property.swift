@@ -41,20 +41,3 @@ public class Property<T> {
         self.unpack = unpack
     }
 }
-
-public func ~= <T>(lhs: Property<T>, rhs: PropertyAnimation<T>) {
-    let animation = rhs.animationForProperty(lhs)
-    lhs.context.animations.append(animation)
-}
-
-public func ~= <T>(lhs: Property<T>, rhs: T) {
-    lhs ~= BasicAnimation(toValue: rhs)
-}
-
-public func ~= <T>(lhs: Property<T>, rhs: [(Float, T)]) {
-    lhs ~= KeyframeAnimation(keyFrames: rhs)
-}
-
-public func ~= (lhs: Property<CGPoint>, rhs: CGPath) {
-    lhs ~= KeyframeAnimation(path: rhs)
-}

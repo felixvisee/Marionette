@@ -13,8 +13,6 @@ public class BasicAnimation<T>: PropertyAnimation<T> {
     public var toValue: T! = nil
     public var byValue: T! = nil
 
-    public override init() {}
-
     public init(fromValue: T! = nil, toValue: T! = nil, byValue: T! = nil, duration aDuration: CFTimeInterval? = nil) {
         super.init()
 
@@ -42,6 +40,23 @@ public class BasicAnimation<T>: PropertyAnimation<T> {
     }
 }
 
+private func animation<T>(range: Range<T>) -> BasicAnimation<T> {
+    return BasicAnimation(fromValue: range.startIndex, toValue: range.isEmpty ? range.endIndex : advance(range.startIndex, distance(range.startIndex, range.endIndex) - 1))
+}
+
+private func animation<T>(interval: ClosedInterval<T>) -> BasicAnimation<T> {
+    return BasicAnimation(fromValue: interval.start, toValue: interval.end)
+}
+
+private func animation<T: ForwardIndexType>(interval: HalfOpenInterval<T>) -> BasicAnimation<T> {
+    return animation(Range(start: interval.start, end: interval.end))
+}
+
+infix operator ... {
+    associativity none
+    precedence 135
+}
+
 public func ... <T>(lhs: T, rhs: T) -> BasicAnimation<T> {
     return BasicAnimation(fromValue: lhs, toValue: rhs)
 }
@@ -58,12 +73,40 @@ postfix public func ... <T>(lhs: T) -> BasicAnimation<T> {
     return BasicAnimation(fromValue: lhs)
 }
 
-infix operator ~ { precedence 131 }
-
-public func ~ <T>(lhs: Range<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
-    return BasicAnimation(fromValue: lhs.startIndex, toValue: lhs.endIndex) ~ rhs
+infix operator ~ {
+    associativity none
+    precedence 131
 }
 
-public func ~ <I: IntervalType, T where I.Bound == T>(lhs: I, rhs: MediaTimingFunction) -> BasicAnimation<T> {
-    return BasicAnimation(fromValue: lhs.start, toValue: lhs.end) ~ rhs
+public func ~ <T>(lhs: Range<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
+    return animation(lhs) ~ rhs
+}
+
+public func ~ <T>(lhs: ClosedInterval<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
+    return animation(lhs) ~ rhs
+}
+
+public func ~ <T: ForwardIndexType>(lhs: HalfOpenInterval<T>, rhs: MediaTimingFunction) -> BasicAnimation<T> {
+    return animation(lhs) ~ rhs
+}
+
+infix operator ~= {
+    associativity none
+    precedence 130
+}
+
+public func ~= <T>(lhs: Property<T>, rhs: T) {
+    lhs ~= ...rhs
+}
+
+public func ~= <T>(lhs: Property<T>, rhs: Range<T>) {
+    lhs ~= animation(rhs)
+}
+
+public func ~= <T>(lhs: Property<T>, rhs: ClosedInterval<T>) {
+    lhs ~= animation(rhs)
+}
+
+public func ~= <T: ForwardIndexType>(lhs: Property<T>, rhs: HalfOpenInterval<T>) {
+    lhs ~= animation(rhs)
 }
