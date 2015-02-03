@@ -1,6 +1,6 @@
 # Marionette
 
-Concise and type safe `CALayer` animations! *Experimental*
+Concise and type safe `CALayer` animations
 
 ## Example
 
@@ -31,6 +31,27 @@ animationGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFuncti
 
 layer.addAnimation(animationGroup, forKey: nil)
 ```
+
+## Installation
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a simple, decentralized dependency manager for Cocoa. You can install it with [Homebrew](http://brew.sh) using the following commands:
+
+```
+$ brew update
+$ brew install carthage
+```
+
+Next, add Marionette to you [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
+
+```
+github "felixjendrusch/Marionette"
+```
+
+Afterwards, run `carthage update` to actually fetch Marionette.
+
+Finally, on your application target's "General" settings tab, in the "Linked Frameworks and Libraries" section, add `Marionette.framework` from the [Carthage/Build](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#carthagebuild) folder on disk.
 
 ## Usage
 
