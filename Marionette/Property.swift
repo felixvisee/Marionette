@@ -14,8 +14,8 @@ public class Property<T> {
     internal let layer: CALayer
     internal let keyPath: String
 
-    internal let pack: (T) -> AnyObject
-    internal let unpack: (AnyObject) -> T
+    internal let pack: T -> AnyObject
+    internal let unpack: AnyObject -> T
 
     public var value: T! {
         get {
@@ -31,7 +31,7 @@ public class Property<T> {
         }
     }
 
-    internal init(_ context: Context, _ layer: CALayer, _ keyPath: String, _ pack: (T) -> AnyObject, _ unpack: (AnyObject) -> T = { $0 as T }) {
+    internal init(_ context: Context, _ layer: CALayer, _ keyPath: String, _ pack: T -> AnyObject, _ unpack: AnyObject -> T) {
         self.context = context
 
         self.layer = layer

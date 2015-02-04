@@ -20,6 +20,10 @@
 		DC7F1EA41A7BB1B70015BD0F /* PropertyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA31A7BB1B70015BD0F /* PropertyAnimation.swift */; };
 		DC7F1EA61A7BB1F80015BD0F /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA51A7BB1F80015BD0F /* BasicAnimation.swift */; };
 		DC7F1EA81A7BB2340015BD0F /* KeyframeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */; };
+		DCA556CF1A82B5A100BF2DD2 /* CoreImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA556CE1A82B5A100BF2DD2 /* CoreImageExtensions.swift */; };
+		DCA556D11A82B6FC00BF2DD2 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA556D01A82B6FC00BF2DD2 /* FoundationExtensions.swift */; };
+		DCA556D41A82BDBB00BF2DD2 /* CoreAnimationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA556D31A82BDBB00BF2DD2 /* CoreAnimationExtensions.swift */; };
+		DCA556D61A82BDCA00BF2DD2 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA556D51A82BDCA00BF2DD2 /* CoreGraphicsExtensions.swift */; };
 		DCAF6E131A7FCC6100350BD7 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAF6E111A7FCC6100350BD7 /* Nimble.framework */; };
 		DCAF6E141A7FCC6100350BD7 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAF6E121A7FCC6100350BD7 /* Quick.framework */; };
 		DCAF6E181A7FD24B00350BD7 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF6E171A7FD24B00350BD7 /* BasicAnimationTests.swift */; };
@@ -80,6 +84,10 @@
 		DC7F1EA31A7BB1B70015BD0F /* PropertyAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyAnimation.swift; sourceTree = "<group>"; };
 		DC7F1EA51A7BB1F80015BD0F /* BasicAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimation.swift; sourceTree = "<group>"; };
 		DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyframeAnimation.swift; sourceTree = "<group>"; };
+		DCA556CE1A82B5A100BF2DD2 /* CoreImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreImageExtensions.swift; sourceTree = "<group>"; };
+		DCA556D01A82B6FC00BF2DD2 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		DCA556D31A82BDBB00BF2DD2 /* CoreAnimationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreAnimationExtensions.swift; sourceTree = "<group>"; };
+		DCA556D51A82BDCA00BF2DD2 /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
 		DCAF6E111A7FCC6100350BD7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		DCAF6E121A7FCC6100350BD7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		DCAF6E171A7FD24B00350BD7 /* BasicAnimationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimationTests.swift; sourceTree = "<group>"; };
@@ -156,6 +164,10 @@
 				DC6246711A7928C0002C1566 /* Animation.swift */,
 				DC7F1EA51A7BB1F80015BD0F /* BasicAnimation.swift */,
 				DC3ACDDF1A7A3B0300A115E9 /* Context.swift */,
+				DCA556D31A82BDBB00BF2DD2 /* CoreAnimationExtensions.swift */,
+				DCA556D51A82BDCA00BF2DD2 /* CoreGraphicsExtensions.swift */,
+				DCA556CE1A82B5A100BF2DD2 /* CoreImageExtensions.swift */,
+				DCA556D01A82B6FC00BF2DD2 /* FoundationExtensions.swift */,
 				DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */,
 				DC6246731A7943C1002C1566 /* LayerProxy.swift */,
 				DC6246771A79AF2B002C1566 /* MediaTiming.swift */,
@@ -360,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA556CF1A82B5A100BF2DD2 /* CoreImageExtensions.swift in Sources */,
 				DC62467A1A79AF89002C1566 /* MediaTimingFunction.swift in Sources */,
 				DC7F1EA41A7BB1B70015BD0F /* PropertyAnimation.swift in Sources */,
 				DC7F1EA81A7BB2340015BD0F /* KeyframeAnimation.swift in Sources */,
@@ -370,9 +383,12 @@
 				DCEA706C1A79242A008BB209 /* Animate.swift in Sources */,
 				DC6246781A79AF2B002C1566 /* MediaTiming.swift in Sources */,
 				DC3ACDE01A7A3B0300A115E9 /* Context.swift in Sources */,
+				DCA556D61A82BDCA00BF2DD2 /* CoreGraphicsExtensions.swift in Sources */,
 				DC6246761A795BE1002C1566 /* Property.swift in Sources */,
 				DC6246741A7943C1002C1566 /* LayerProxy.swift in Sources */,
+				DCA556D41A82BDBB00BF2DD2 /* CoreAnimationExtensions.swift in Sources */,
 				DC3ACDE41A7A677D00A115E9 /* Transaction.swift in Sources */,
+				DCA556D11A82B6FC00BF2DD2 /* FoundationExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

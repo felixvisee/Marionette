@@ -41,35 +41,35 @@ public class LayerProxy {
     public let shadowPath: Property<CGPath>
 
     internal init(_ context: Context, _ layer: CALayer) {
-        bounds = Property(context, layer, "bounds") { NSValue(CGRect: $0) }
-        position = Property(context, layer, "position") { NSValue(CGPoint: $0) }
-        zPosition = Property(context, layer, "zPosition") { $0 }
-        anchorPoint = Property(context, layer, "anchorPoint") { NSValue(CGPoint: $0) }
-        anchorPointZ = Property(context, layer, "anchorPointZ") { $0 }
-        transform = Property(context, layer, "transform") { NSValue(CATransform3D: $0) }
-        hidden = Property(context, layer, "hidden") { $0 }
-        doubleSided = Property(context, layer, "doubleSided") { $0 }
-        sublayerTransform = Property(context, layer, "sublayerTransform") { NSValue(CATransform3D: $0) }
-        masksToBounds = Property(context, layer, "masksToBounds") { $0 }
-        contents = Property(context, layer, "contents") { $0 }
-        contentsRect = Property(context, layer, "contentsRect") { NSValue(CGRect: $0) }
-        contentsScale = Property(context, layer, "contentsScale") { $0 }
-        contentsCenter = Property(context, layer, "contentsCenter") { NSValue(CGRect: $0) }
-        minificationFilterBias = Property(context, layer, "minificationFilterBias") { $0 }
-        backgroundColor = Property(context, layer, "backgroundColor") { $0 }
-        cornerRadius = Property(context, layer, "cornerRadius") { $0 }
-        borderWidth = Property(context, layer, "borderWidth") { $0 }
-        borderColor = Property(context, layer, "borderColor") { $0 }
-        opacity = Property(context, layer, "opacity") { $0 }
-        composingFilter = Property(context, layer, "composingFilter") { $0 }
-        filters = Property(context, layer, "filters") { $0 }
-        backgroundFilters = Property(context, layer, "backgroundFilters") { $0 }
-        shouldRasterize = Property(context, layer, "shouldRasterize") { $0 }
-        rasterizationScale = Property(context, layer, "rasterizationScale") { $0 }
-        shadowColor = Property(context, layer, "shadowColor") { $0 }
-        shadowOpacity = Property(context, layer, "shadowOpacity") { $0 }
-        shadowOffset = Property(context, layer, "shadowOffset") { NSValue(CGSize: $0) }
-        shadowRadius = Property(context, layer, "shadowRadius") { $0 }
-        shadowPath = Property(context, layer, "shadowPath") { $0 }
+        bounds = Property(context, layer, "bounds", pack, unpack)
+        position = Property(context, layer, "position", pack, unpack)
+        zPosition = Property(context, layer, "zPosition", pack, unpack)
+        anchorPoint = Property(context, layer, "anchorPoint", pack, unpack)
+        anchorPointZ = Property(context, layer, "anchorPointZ", pack, unpack)
+        transform = Property(context, layer, "transform", pack, unpack)
+        hidden = Property(context, layer, "hidden", pack, unpack)
+        doubleSided = Property(context, layer, "doubleSided", pack, unpack)
+        sublayerTransform = Property(context, layer, "sublayerTransform", pack, unpack)
+        masksToBounds = Property(context, layer, "masksToBounds", pack, unpack)
+        contents = Property(context, layer, "contents", pack, unpack)
+        contentsRect = Property(context, layer, "contentsRect", pack, unpack)
+        contentsScale = Property(context, layer, "contentsScale", pack, unpack)
+        contentsCenter = Property(context, layer, "contentsCenter", pack, unpack)
+        minificationFilterBias = Property(context, layer, "minificationFilterBias", pack, unpack)
+        backgroundColor = Property(context, layer, "backgroundColor", pack, unpack)
+        cornerRadius = Property(context, layer, "cornerRadius", pack, unpack)
+        borderWidth = Property(context, layer, "borderWidth", pack, unpack)
+        borderColor = Property(context, layer, "borderColor", pack, unpack)
+        opacity = Property(context, layer, "opacity", pack, unpack)
+        composingFilter = Property(context, layer, "composingFilter", pack, unpack)
+        filters = Property(context, layer, "filters", { $0.map(pack) }, { ($0 as [AnyObject]).map(unpack) })
+        backgroundFilters = Property(context, layer, "backgroundFilters", { $0.map(pack) }, { ($0 as [AnyObject]).map(unpack) })
+        shouldRasterize = Property(context, layer, "shouldRasterize", pack, unpack)
+        rasterizationScale = Property(context, layer, "rasterizationScale", pack, unpack)
+        shadowColor = Property(context, layer, "shadowColor", pack, unpack)
+        shadowOpacity = Property(context, layer, "shadowOpacity", pack, unpack)
+        shadowOffset = Property(context, layer, "shadowOffset", pack, unpack)
+        shadowRadius = Property(context, layer, "shadowRadius", pack, unpack)
+        shadowPath = Property(context, layer, "shadowPath", pack, unpack)
     }
 }
