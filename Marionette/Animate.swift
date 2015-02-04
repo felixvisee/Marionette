@@ -8,19 +8,19 @@
 
 import UIKit
 
-public func animate(layer: CALayer, block: (LayerProxy) -> ()) {
+public func animate(layer: CALayer, block: LayerProxy -> ()) {
     animate(layer, duration: nil, timingFunction: nil, key: nil, block: block)
 }
 
-public func animate(layer: CALayer, duration aDuration: CFTimeInterval, block: (LayerProxy) -> ()) {
+public func animate(layer: CALayer, duration aDuration: CFTimeInterval, block: LayerProxy -> ()) {
     animate(layer, duration: aDuration, timingFunction: nil, key: nil, block: block)
 }
 
-public func animate(layer: CALayer, duration aDuration: CFTimeInterval, timingFunction aTimingFunction: MediaTimingFunction, block: (LayerProxy) -> ()) {
+public func animate(layer: CALayer, duration aDuration: CFTimeInterval, timingFunction aTimingFunction: MediaTimingFunction, block: LayerProxy -> ()) {
     animate(layer, duration: aDuration, timingFunction: aTimingFunction, key: nil, block: block)
 }
 
-public func animate(layer: CALayer, duration aDuration: CFTimeInterval? = nil, timingFunction aTimingFunction: MediaTimingFunction? = nil, key: String? = nil, #block: (LayerProxy) -> ()) {
+public func animate(layer: CALayer, duration aDuration: CFTimeInterval? = nil, timingFunction aTimingFunction: MediaTimingFunction? = nil, key: String? = nil, #block: LayerProxy -> ()) {
     let context = Context()
 
     block(LayerProxy(context, layer))
