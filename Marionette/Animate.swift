@@ -25,10 +25,7 @@ public func animate(layer: CALayer, duration aDuration: CFTimeInterval? = nil, t
 
     block(LayerProxy(context, layer))
 
-    if context.animations.count <= 1 && aDuration == nil && aTimingFunction == nil {
-        let animation = context.animations.last
-        layer.addAnimation(animation, forKey: key)
-    } else {
+    if !context.animations.isEmpty {
         let animationGroup = CAAnimationGroup()
         animationGroup.animations = context.animations
 
