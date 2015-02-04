@@ -64,6 +64,7 @@ class KeyframeAnimationSpec: QuickSpec {
                         animation = layer.opacity ~= [(0, 0), (0.5, 0.5), (1, 1)]
                     }
 
+                    expect(animation.keyPath).to(equal("opacity"))
                     expect(animation.values as? [Float]).to(equal([0, 0.5, 1]))
                     expect(animation.keyTimes as? [Float]).to(equal([0, 0.5, 1]))
                 }
@@ -78,6 +79,7 @@ class KeyframeAnimationSpec: QuickSpec {
                         animation = layer.position ~= path
                     }
 
+                    expect(animation.keyPath).to(equal("position"))
                     expect(animation.path).to(beIdenticalTo(path))
                 }
             }

@@ -93,6 +93,7 @@ class BasicAnimationSpec: QuickSpec {
                         animation = layer.opacity ~= 1
                     }
 
+                    expect(animation.keyPath).to(equal("opacity"))
                     expect(animation.fromValue).to(beNil())
                     expect(animation.toValue as? Float).to(equal(1))
                     expect(animation.byValue).to(beNil())
@@ -111,6 +112,7 @@ class BasicAnimationSpec: QuickSpec {
                         animation = layer.opacity ~= ClosedInterval(0, 1)
                     }
 
+                    expect(animation.keyPath).to(equal("opacity"))
                     expect(animation.fromValue as? Float).to(equal(0))
                     expect(animation.toValue as? Float).to(equal(1))
                     expect(animation.byValue).to(beNil())
