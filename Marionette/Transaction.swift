@@ -16,7 +16,11 @@ public func transactionWithDuration(aDuration: CFTimeInterval, block: () -> ()) 
     transactionWithDuration(aDuration, timingFunction: nil, block: block)
 }
 
-public func transactionWithDuration(aDuration: CFTimeInterval?, timingFunction aTimingFunction: MediaTimingFunction? = nil, #block: () -> ()) {
+public func transactionWithDuration(aDuration: CFTimeInterval, timingFunction aTimingFunction: MediaTimingFunction, block: () -> ()) {
+    transactionWithDuration(aDuration, timingFunction: aTimingFunction, block: block)
+}
+
+public func transactionWithDuration(aDuration: CFTimeInterval?, timingFunction aTimingFunction: MediaTimingFunction? = nil, #block: () -> (), completionBlock aCompletionBlock: (() -> ())? = nil) {
     CATransaction.begin()
 
     if let duration = aDuration {
@@ -25,6 +29,10 @@ public func transactionWithDuration(aDuration: CFTimeInterval?, timingFunction a
 
     if let timingFunction = aTimingFunction {
         CATransaction.setAnimationTimingFunction(timingFunction.function())
+    }
+
+    if let completionBlock = aCompletionBlock {
+        CATransaction.setCompletionBlock(completionBlock)
     }
 
     block()
