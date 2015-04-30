@@ -16,6 +16,8 @@
 		DC6246781A79AF2B002C1566 /* MediaTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6246771A79AF2B002C1566 /* MediaTiming.swift */; };
 		DC62467A1A79AF89002C1566 /* MediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6246791A79AF89002C1566 /* MediaTimingFunction.swift */; };
 		DC62467C1A79B008002C1566 /* ValueFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62467B1A79B008002C1566 /* ValueFunction.swift */; };
+		DC6E47971AF1AEA3004108D0 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCAF6E121A7FCC6100350BD7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DC6E47981AF1AEA3004108D0 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCAF6E111A7FCC6100350BD7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DC751E671A7BD00A0099D552 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC751E661A7BD00A0099D552 /* Utils.swift */; };
 		DC7F1EA41A7BB1B70015BD0F /* PropertyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA31A7BB1B70015BD0F /* PropertyAnimation.swift */; };
 		DC7F1EA61A7BB1F80015BD0F /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F1EA51A7BB1F80015BD0F /* BasicAnimation.swift */; };
@@ -27,8 +29,6 @@
 		DCAF6E131A7FCC6100350BD7 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAF6E111A7FCC6100350BD7 /* Nimble.framework */; };
 		DCAF6E141A7FCC6100350BD7 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAF6E121A7FCC6100350BD7 /* Quick.framework */; };
 		DCAF6E181A7FD24B00350BD7 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF6E171A7FD24B00350BD7 /* BasicAnimationTests.swift */; };
-		DCAF6E1C1A7FD4DF00350BD7 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCAF6E121A7FCC6100350BD7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DCAF6E1D1A7FD4E200350BD7 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCAF6E111A7FCC6100350BD7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCAF6E1F1A80118200350BD7 /* KeyframeAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF6E1E1A80118200350BD7 /* KeyframeAnimationTests.swift */; };
 		DCEA702C1A792320008BB209 /* Marionette.h in Headers */ = {isa = PBXBuildFile; fileRef = DCEA702B1A792320008BB209 /* Marionette.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCEA70321A792320008BB209 /* Marionette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEA70261A792320008BB209 /* Marionette.framework */; };
@@ -64,8 +64,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DCAF6E1D1A7FD4E200350BD7 /* Nimble.framework in CopyFiles */,
-				DCAF6E1C1A7FD4DF00350BD7 /* Quick.framework in CopyFiles */,
+				DC6E47971AF1AEA3004108D0 /* Quick.framework in CopyFiles */,
+				DC6E47981AF1AEA3004108D0 /* Nimble.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,12 +136,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC6E47961AF1ADD9004108D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCAF6E121A7FCC6100350BD7 /* Quick.framework */,
+				DCAF6E111A7FCC6100350BD7 /* Nimble.framework */,
+			);
+			name = Frameworks;
+			path = MarionetteTests;
+			sourceTree = "<group>";
+		};
 		DCEA701C1A792320008BB209 = {
 			isa = PBXGroup;
 			children = (
 				DCEA70281A792320008BB209 /* Marionette */,
 				DCEA70351A792320008BB209 /* MarionetteTests */,
 				DCEA70471A792353008BB209 /* MarionetteDemo */,
+				DC6E47961AF1ADD9004108D0 /* Frameworks */,
 				DCEA70271A792320008BB209 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -159,7 +170,6 @@
 		DCEA70281A792320008BB209 /* Marionette */ = {
 			isa = PBXGroup;
 			children = (
-				DCEA702B1A792320008BB209 /* Marionette.h */,
 				DCEA706B1A79242A008BB209 /* Animate.swift */,
 				DC6246711A7928C0002C1566 /* Animation.swift */,
 				DC7F1EA51A7BB1F80015BD0F /* BasicAnimation.swift */,
@@ -170,6 +180,7 @@
 				DCA556D01A82B6FC00BF2DD2 /* FoundationExtensions.swift */,
 				DC7F1EA71A7BB2340015BD0F /* KeyframeAnimation.swift */,
 				DC6246731A7943C1002C1566 /* LayerProxy.swift */,
+				DCEA702B1A792320008BB209 /* Marionette.h */,
 				DC6246771A79AF2B002C1566 /* MediaTiming.swift */,
 				DC6246791A79AF89002C1566 /* MediaTimingFunction.swift */,
 				DC6246751A795BE1002C1566 /* Property.swift */,
@@ -193,8 +204,6 @@
 		DCEA70351A792320008BB209 /* MarionetteTests */ = {
 			isa = PBXGroup;
 			children = (
-				DCAF6E111A7FCC6100350BD7 /* Nimble.framework */,
-				DCAF6E121A7FCC6100350BD7 /* Quick.framework */,
 				DCAF6E171A7FD24B00350BD7 /* BasicAnimationTests.swift */,
 				DCAF6E1E1A80118200350BD7 /* KeyframeAnimationTests.swift */,
 				DCEA70361A792320008BB209 /* Supporting Files */,
