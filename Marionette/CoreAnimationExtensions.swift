@@ -13,5 +13,5 @@ public func pack(value: CATransform3D) -> AnyObject {
 }
 
 public func unpack(value: AnyObject) -> CATransform3D {
-    return (value as NSValue).CATransform3DValue
+    return (value as! NSValue).CATransform3DValue
 }

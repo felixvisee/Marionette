@@ -13,7 +13,7 @@ public func pack(value: CIImage) -> AnyObject {
 }
 
 public func unpack(value: AnyObject) -> CIImage {
-    return value as CIImage
+    return value as! CIImage
 }
 
 public func pack(value: CIFilter) -> AnyObject {
@@ -21,5 +21,5 @@ public func pack(value: CIFilter) -> AnyObject {
 }
 
 public func unpack(value: AnyObject) -> CIFilter {
-    return value as CIFilter
+    return value as! CIFilter
 }

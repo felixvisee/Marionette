@@ -13,7 +13,7 @@ public func pack(value: Bool) -> AnyObject {
 }
 
 public func unpack(value: AnyObject) -> Bool {
-    return (value as NSNumber).boolValue
+    return (value as! NSNumber).boolValue
 }
 
 public func pack(value: Float) -> AnyObject {
@@ -21,5 +21,5 @@ public func pack(value: Float) -> AnyObject {
 }
 
 public func unpack(value: AnyObject) -> Float {
-    return (value as NSNumber).floatValue
+    return (value as! NSNumber).floatValue
 }

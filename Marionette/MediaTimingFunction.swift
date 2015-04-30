@@ -48,6 +48,6 @@ public func ==(lhs: MediaTimingFunction, rhs: MediaTimingFunction) -> Bool {
     case (.CubicBezier(let lc1x, let lc1y, let lc2x, let lc2y), .CubicBezier(let rc1x, let rc1y, let rc2x, let rc2y)):
         return lc1x == rc1x && lc1y == rc1y && lc2x == rc2x && lc2y == rc2y
     default:
-        return lhs.name? == rhs.name?
+        return lhs.name == rhs.name
     }
 }

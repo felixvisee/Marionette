@@ -13,7 +13,7 @@ public func pack(value: CGFloat) -> AnyObject {
 }
 
 public func unpack(value: AnyObject) -> CGFloat {
-    return CGFloat((value as NSNumber).doubleValue)
+    return CGFloat((value as! NSNumber).doubleValue)
 }
 
 public func pack(value: CGColor) -> AnyObject {
@@ -21,7 +21,7 @@ public func pack(value: CGColor) -> AnyObject {
 }
 
 public func unpack(value: AnyObject) -> CGColor {
-    return value as CGColor
+    return value as! CGColor
 }
 
 public func pack(value: CGPoint) -> AnyObject {
@@ -29,7 +29,7 @@ public func pack(value: CGPoint) -> AnyObject {
 }
 
 public func unpack(value: AnyObject) -> CGPoint {
-    return (value as NSValue).CGPointValue()
+    return (value as! NSValue).CGPointValue()
 }
 
 public func pack(value: CGSize) -> AnyObject {
@@ -37,7 +37,7 @@ public func pack(value: CGSize) -> AnyObject {
 }
 
 public func unpack(value: AnyObject) -> CGSize {
-    return (value as NSValue).CGSizeValue()
+    return (value as! NSValue).CGSizeValue()
 }
 
 public func pack(value: CGRect) -> AnyObject {
@@ -45,7 +45,7 @@ public func pack(value: CGRect) -> AnyObject {
 }
 
 public func unpack(value: AnyObject) -> CGRect {
-    return (value as NSValue).CGRectValue()
+    return (value as! NSValue).CGRectValue()
 }
 
 public func pack(value: CGPath) -> AnyObject {
@@ -53,5 +53,5 @@ public func pack(value: CGPath) -> AnyObject {
 }
 
 public func unpack(value: AnyObject) -> CGPath {
-    return value as CGPath
+    return value as! CGPath
 }
