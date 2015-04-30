@@ -1,10 +1,4 @@
-//
-//  PropertyAnimation.swift
-//  Marionette
-//
-//  Created by Felix Jendrusch on 1/30/15.
 //  Copyright (c) 2015 Felix Jendrusch. All rights reserved.
-//
 
 import UIKit
 
