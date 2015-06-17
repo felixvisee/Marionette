@@ -122,7 +122,3 @@ Properties specific to `CALayer` subclasses are not yet supported.
 ## Behind the proxy
 
 Marionette uses a proxy object and custom operator functions similar to [Cartography](https://github.com/robb/Cartography).
-
-## Contact
-
-I'm [Felix](http://felixjendrusch.is), you can follow me on [Twitter](https://twitter.com/felixjendrusch) :wave:
